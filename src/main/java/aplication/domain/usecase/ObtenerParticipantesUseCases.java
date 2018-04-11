@@ -13,7 +13,7 @@ public class ObtenerParticipantesUseCases {
     @Autowired
     private Repository repositoryLocal;
 
-    public List<ParticipanteModel> obtenerParticipantes(){
-        return repositoryLocal.obtenerParticipantes();
+    public List<ParticipanteModel> obtenerParticipantes(String rut){
+        return repositoryLocal.obtenerParticipantes(rut);
     }
 }
