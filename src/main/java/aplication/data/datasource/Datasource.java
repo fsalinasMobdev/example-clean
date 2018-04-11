@@ -5,5 +5,5 @@ import aplication.data.entity.ParticitanteEntity;
 import java.util.List;
 
 public interface Datasource {
-    List<ParticitanteEntity> obtenerPartcipantes();
+    List<ParticitanteEntity> obtenerPartcipantes(String rut);
 }

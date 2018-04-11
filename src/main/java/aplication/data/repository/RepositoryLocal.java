@@ -18,7 +18,7 @@ public class RepositoryLocal implements Repository{
     }
 
     @Override
-    public List<ParticipanteModel> obtenerParticipantes() {
-        return ParticipanteModelToEntity.reverse(localDataSource.obtenerPartcipantes());
+    public List<ParticipanteModel> obtenerParticipantes(String rut) {
+        return ParticipanteModelToEntity.reverse(localDataSource.obtenerPartcipantes(rut));
     }
 }
