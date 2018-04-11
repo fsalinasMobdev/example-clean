@@ -48,6 +48,7 @@ public class ParticipantesLocal implements Local {
         participantes.add(particitanteEntityCuatro);*/
 
 
+
         return participantes;
     }
 }
