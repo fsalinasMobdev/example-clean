@@ -17,4 +17,9 @@ public class ApiDataSource implements Datasource {
     public ParticipanteEntity obtenerPartcipante(String rut) {
         return participantApi.obtenerPartcipante(rut);
     }
+
+    @Override
+    public void addParticipante(String rut, ParticipanteEntity participanteEntity) {
+       // TOD generar una excepcion, la api no permite crear participantes
+    }
 }

@@ -10,10 +10,12 @@ import org.springframework.stereotype.Component;
 public class ObtenerParticipanteUseCases {
 
     @Autowired
-    @Qualifier("repositorioApi")
+    @Qualifier("repositorioLocal")
     private Repository repository;
 
     public ParticipanteModel obtenerParticipante(String rut) {
         return repository.obtenerParticipante(rut);
     }
+
+
 }

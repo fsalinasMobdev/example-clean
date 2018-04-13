@@ -9,12 +9,16 @@ import java.util.Map;
 @Component
 public class ParticipantesLocal implements Local {
     private Map<String, ParticipanteEntity> participantes = new HashMap<>();
-    ;
 
     @Override
     public ParticipanteEntity obtenerPartcipante(String rut) {
         CargarParticipantes();
         return participantes.get(rut);
+    }
+
+    @Override
+    public void addParticipante(String rut, ParticipanteEntity participanteEntity ) {
+        participantes.put(rut, participanteEntity);
     }
 
     private void CargarParticipantes() {
@@ -35,4 +39,6 @@ public class ParticipantesLocal implements Local {
         participantes.put("3-0", participanteEntityTres);
         participantes.put("4-0", participanteEntityCuatro);
     }
+
+
 }
