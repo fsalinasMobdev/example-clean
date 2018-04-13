@@ -17,4 +17,10 @@ public class LocalDataSource implements Datasource {
     public ParticipanteEntity obtenerPartcipante(String rut) {
         return participantesLocal.obtenerPartcipante(rut);
     }
+
+    @Override
+    public ParticipanteEntity crearPartcipante(String rut) {
+        participantesLocal.crearPartcipante(rut);
+        return null;
+    }
 }

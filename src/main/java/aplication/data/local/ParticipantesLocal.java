@@ -17,6 +17,13 @@ public class ParticipantesLocal implements Local {
         return participantes.get(rut);
     }
 
+    @Override
+    public void crearPartcipante(String rut) {
+        ParticipanteEntity participanteEntityNew = new ParticipanteEntity();
+        participanteEntityNew.setNombre("New User con RUT :" + rut);
+        participantes.put(rut, participanteEntityNew);
+    }
+
     private void CargarParticipantes() {
         ParticipanteEntity participanteEntityDftl = new ParticipanteEntity();
         participanteEntityDftl.setNombre("Default : No se ha encontrado RUT");
