@@ -10,7 +10,8 @@ import org.springframework.stereotype.Component;
 public class ObtenerParticipanteUseCases {
 
     @Autowired
-    @Qualifier("repositorioApi")
+    //CWG: Aqui apunto a repositorio CACHE
+    @Qualifier("repositorioCache")
     private Repository repository;
 
     public ParticipanteModel obtenerParticipante(String rut) {

@@ -18,6 +18,9 @@ public class ParticipantesLocal implements Local {
     }
 
     private void CargarParticipantes() {
+        ParticipanteEntity participanteEntityDftl = new ParticipanteEntity();
+        participanteEntityDftl.setNombre("Default : No se ha encontrado RUT");
+
         ParticipanteEntity participanteEntityUno = new ParticipanteEntity();
         participanteEntityUno.setNombre("Ileyn Avalos");
 
@@ -30,6 +33,7 @@ public class ParticipantesLocal implements Local {
         ParticipanteEntity participanteEntityCuatro = new ParticipanteEntity();
         participanteEntityCuatro.setNombre("Nadia Poniatowsky");
 
+        participantes.put("0000000000", participanteEntityDftl);
         participantes.put("1-0", participanteEntityUno);
         participantes.put("2-0", participanteEntityDos);
         participantes.put("3-0", participanteEntityTres);
