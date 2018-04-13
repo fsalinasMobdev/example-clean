@@ -4,6 +4,6 @@ import aplication.domain.model.ParticipanteModel;
 
 import java.util.List;
 
-public interface Repository {
-    ParticipanteModel obtenerParticipante(String rut);
+public interface RepositoryAll {
+    List<ParticipanteModel> obtenerParticipantes();
 }

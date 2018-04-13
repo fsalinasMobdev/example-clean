@@ -9,21 +9,11 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 
 @Component
-@Qualifier("localDataSource")
-public class LocalDataSource implements DatasourceLocal {
+@Qualifier("localDataSourceAll")
+public class LocalDataSourceAll implements DatasourceLocalAll {
 
     @Autowired
     private Local participantesLocal;
-
-    @Override
-    public ParticipanteEntity obtenerPartcipante(String rut) {
-        return participantesLocal.obtenerPartcipante(rut);
-    }
-
-    @Override
-    public boolean ingresarPartcipante(String rut, ParticipanteEntity nombre) {
-        return participantesLocal.ingresarPartcipante(rut, nombre);
-    }
 
     @Override
     public List<ParticipanteEntity> obtenerPartcipantes() {
