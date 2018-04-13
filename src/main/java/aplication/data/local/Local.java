@@ -1,7 +1,7 @@
 package aplication.data.local;
 
-import aplication.data.entity.ParticitanteEntity;
+import aplication.data.entity.ParticipanteEntity;
 
 public interface Local {
-    ParticitanteEntity obtenerPartcipante(String rut);
+    ParticipanteEntity obtenerPartcipante(String rut);
 }

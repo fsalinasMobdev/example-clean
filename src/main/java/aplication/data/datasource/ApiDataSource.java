@@ -1,7 +1,7 @@
 package aplication.data.datasource;
 
 import aplication.data.api.Api;
-import aplication.data.entity.ParticitanteEntity;
+import aplication.data.entity.ParticipanteEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
@@ -14,7 +14,7 @@ public class ApiDataSource implements Datasource {
     private Api participantApi;
 
     @Override
-    public ParticitanteEntity obtenerPartcipante(String rut) {
+    public ParticipanteEntity obtenerPartcipante(String rut) {
         return participantApi.obtenerPartcipante(rut);
     }
 }

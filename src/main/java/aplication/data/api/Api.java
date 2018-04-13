@@ -1,7 +1,7 @@
 package aplication.data.api;
 
-import aplication.data.entity.ParticitanteEntity;
+import aplication.data.entity.ParticipanteEntity;
 
 public interface Api {
-    ParticitanteEntity obtenerPartcipante(String rut);
+    ParticipanteEntity obtenerPartcipante(String rut);
 }

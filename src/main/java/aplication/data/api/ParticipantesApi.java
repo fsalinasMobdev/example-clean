@@ -1,6 +1,6 @@
 package aplication.data.api;
 
-import aplication.data.entity.ParticitanteEntity;
+import aplication.data.entity.ParticipanteEntity;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
@@ -13,10 +13,10 @@ public class ParticipantesApi implements Api {
     private final String HTTPS_API_RUTIFY_SEARCH = "https://api.rutify.cl/search?q=";
 
     @Override
-    public ParticitanteEntity obtenerPartcipante(String rut) {
-        ParticitanteEntity[] responseApiArray;
+    public ParticipanteEntity obtenerPartcipante(String rut) {
+        ParticipanteEntity[] responseApiArray;
         RestTemplate restTemplate = new RestTemplate();
-        responseApiArray = restTemplate.getForObject(getUrlSearch(rut), ParticitanteEntity[].class);
+        responseApiArray = restTemplate.getForObject(getUrlSearch(rut), ParticipanteEntity[].class);
         return getParticitanteEntity(responseApiArray);
     }
 
@@ -24,11 +24,11 @@ public class ParticipantesApi implements Api {
         return HTTPS_API_RUTIFY_SEARCH + rut;
     }
 
-    private ParticitanteEntity getParticitanteEntity(ParticitanteEntity[] responseApiArray) {
-        List<ParticitanteEntity> listParticitanteEntity = Arrays.asList(responseApiArray);
-        if (listParticitanteEntity.isEmpty()) {
-            return new ParticitanteEntity();
+    private ParticipanteEntity getParticitanteEntity(ParticipanteEntity[] responseApiArray) {
+        List<ParticipanteEntity> listParticipanteEntity = Arrays.asList(responseApiArray);
+        if (listParticipanteEntity.isEmpty()) {
+            return new ParticipanteEntity();
         }
-        return listParticitanteEntity.get(0);
+        return listParticipanteEntity.get(0);
     }
 }
