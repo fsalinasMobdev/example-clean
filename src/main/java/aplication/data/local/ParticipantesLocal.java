@@ -5,17 +5,20 @@ import org.springframework.stereotype.Component;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.ArrayList;
+import java.util.List;
+
 
 @Component
 public class ParticipantesLocal implements Local {
     private Map<String, ParticipanteEntity> participantes = new HashMap<>();
-    ;
 
     @Override
     public ParticipanteEntity obtenerPartcipante(String rut) {
         CargarParticipantes();
         return participantes.get(rut);
     }
+
 
     private void CargarParticipantes() {
         ParticipanteEntity participanteEntityUno = new ParticipanteEntity();
@@ -35,4 +38,15 @@ public class ParticipantesLocal implements Local {
         participantes.put("3-0", participanteEntityTres);
         participantes.put("4-0", participanteEntityCuatro);
     }
+
+    @Override
+    public List<ParticipanteEntity> obtenerParticipantes() {
+        return new ArrayList<>(participantes.values());
+    }
+
+    @Override
+    public void addParticipante(ParticipanteEntity participante) {
+        participantes.put(participante.getRut(), participante);
+    }
+
 }

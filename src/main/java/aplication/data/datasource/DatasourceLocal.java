@@ -2,6 +2,9 @@ package aplication.data.datasource;
 
 import aplication.data.entity.ParticipanteEntity;
 
-public interface Datasource {
+import java.util.List;
+
+public interface DatasourceLocal {
     ParticipanteEntity obtenerPartcipante(String rut);
+    List<ParticipanteEntity> obtenerParticipantes();
 }

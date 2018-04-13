@@ -3,15 +3,18 @@ package aplication.domain.usecase;
 import aplication.data.repository.Repository;
 import aplication.domain.model.ParticipanteModel;
 import org.springframework.beans.factory.annotation.Autowired;
+import java.util.List;
 import org.springframework.stereotype.Component;
 
 @Component
-public class ObtenerParticipanteUseCases {
+public class ObtenerParticipantesUseCases {
 
     @Autowired
     private Repository repository;
 
-    public ParticipanteModel obtenerParticipante(String rut) {
-        return repository.obtenerParticipante(rut);
+    public List<ParticipanteModel> obtenerParticipantes() {
+        return repository.obtenerParticipantes();
     }
+
+
 }

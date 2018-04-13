@@ -10,7 +10,7 @@ import java.util.List;
 @Component
 public class ParticipantesApi implements Api {
 
-    private final String HTTPS_API_RUTIFY_SEARCH = "https://api.rutify.cl/search?q=";
+    private final String HTTPS_API_RUTIFY = "https://api.rutify.cl/search";
 
     @Override
     public ParticipanteEntity obtenerPartcipante(String rut) {
@@ -20,14 +20,18 @@ public class ParticipantesApi implements Api {
         return getParticitanteEntity(responseApiArray);
     }
 
+
     private String getUrlSearch(String rut) {
-        return HTTPS_API_RUTIFY_SEARCH + rut;
+        return HTTPS_API_RUTIFY + "?q=" + rut;
     }
 
     private ParticipanteEntity getParticitanteEntity(ParticipanteEntity[] responseApiArray) {
         List<ParticipanteEntity> listParticipanteEntity = Arrays.asList(responseApiArray);
         if (listParticipanteEntity.isEmpty()) {
-            return new ParticipanteEntity();
+            ParticipanteEntity participanteEntity = new ParticipanteEntity();
+            participanteEntity.setNombre("No encontrado en API");
+            participanteEntity.setRut("");
+            return participanteEntity;
         }
         return listParticipanteEntity.get(0);
     }

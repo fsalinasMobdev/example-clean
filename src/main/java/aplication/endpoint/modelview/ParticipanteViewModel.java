@@ -6,5 +6,6 @@ import lombok.Data;
 public class ParticipanteViewModel {
 
     private String nombre;
+    private String rut;
 
 }
