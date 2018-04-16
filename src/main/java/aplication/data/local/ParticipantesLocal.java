@@ -1,9 +1,12 @@
 package aplication.data.local;
 
 import aplication.data.entity.ParticipanteEntity;
+import aplication.endpoint.modelview.ParticipanteViewModel;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @Component
@@ -16,6 +19,7 @@ public class ParticipantesLocal implements Local {
         CargarParticipantes();
         return participantes.get(rut);
     }
+
 
     private void CargarParticipantes() {
         ParticipanteEntity participanteEntityUno = new ParticipanteEntity();
@@ -34,5 +38,16 @@ public class ParticipantesLocal implements Local {
         participantes.put("2-0", participanteEntityDos);
         participantes.put("3-0", participanteEntityTres);
         participantes.put("4-0", participanteEntityCuatro);
+    }
+
+    @Override
+    public void CargarParticipantes(String rut, ParticipanteEntity nombre) {
+        participantes.put(rut,nombre);
+    }
+
+    public  List<ParticipanteEntity> listarParticipantes() {
+
+        List<ParticipanteEntity> list = new ArrayList<ParticipanteEntity>(participantes.values());
+        return list;
     }
 }

@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Qualifier("localDataSource")
-public class LocalDataSource implements Datasource {
+public class LocalDataSource implements DatasourceLocal {
 
     @Autowired
     private Local participantesLocal;
@@ -17,4 +17,16 @@ public class LocalDataSource implements Datasource {
     public ParticipanteEntity obtenerPartcipante(String rut) {
         return participantesLocal.obtenerPartcipante(rut);
     }
+
+    @Override
+    public void CargarParticipantes(String rut, ParticipanteEntity nombre) {
+        participantesLocal.CargarParticipantes(rut,nombre);
+    }
+
+    @Override
+    public void listarParticipantes() {
+        participantesLocal.listarParticipantes();
+    }
+
+
 }

@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Qualifier("apiDataSource")
-public class ApiDataSource implements Datasource {
+public class ApiDataSource implements DatasourceApi {
 
     @Autowired
     private Api participantApi;
@@ -17,4 +17,6 @@ public class ApiDataSource implements Datasource {
     public ParticipanteEntity obtenerPartcipante(String rut) {
         return participantApi.obtenerPartcipante(rut);
     }
+
+
 }

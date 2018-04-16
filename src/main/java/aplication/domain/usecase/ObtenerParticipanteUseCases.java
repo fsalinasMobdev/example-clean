@@ -6,14 +6,22 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
 @Component
 public class ObtenerParticipanteUseCases {
 
     @Autowired
-    @Qualifier("repositorioApi")
-    private Repository repository;
+    @Qualifier("repositorioCache")
+    private Repository repositoryCache;
+
 
     public ParticipanteModel obtenerParticipante(String rut) {
-        return repository.obtenerParticipante(rut);
+        return repositoryCache.obtenerParticipante(rut);
     }
+
+    public List<ParticipanteModel> listarParticipantes(){
+        return repositoryCache.listarParticipantes();
+    }
+
 }
